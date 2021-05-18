@@ -45,29 +45,54 @@
         FILM MOOD FRAME<div class="filter-list-content">VIVID&NOISY</div>
       </div>
 
-      <div class="grid">
-        <div class="item" style="background-image: url('images/camera filter/filter4/1.JPG')"></div>
+      <div class="container">
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/1.JPG" alt="aaa">
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/2.JPG" alt="bbb" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/3.JPG" alt="ccc" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/4.JPG" alt="ddd" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/5.JPG" alt="eee" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/6.JPG" alt="fff" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/7.JPG" alt="ggg" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/8.JPG" alt="hhh" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/9.JPG" alt="iii" >
+      <img class="myImages" id="myImg" src="images/camera filter/filter4/10.JPG" alt="jjj" >
+    </div>
 
-        <div class="item" style="background-image: url('images/camera filter/filter4/2.jpg')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/3.jpg')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/4.jpg')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/5.jpg')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/6.JPG')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/7.JPG')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/8.jpg')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/9.JPG')"></div>
-
-        <div class="item" style="background-image: url('images/camera filter/filter4/10.jpg')"></div>
-
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
       </div>
+    </div>
 
-      </div>
+
+    <script>
+      // create references to the modal...
+      var modal = document.getElementById('myModal');
+      // to all images -- note I'm using a class!
+      var images = document.getElementsByClassName('myImages');
+      // the image in the modal
+      var modalImg = document.getElementById("img01");
+      // and the caption in the modal
+      var captionText = document.getElementById("caption");
+
+      // Go through all of the images with our custom class
+      for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        // and attach our click listener for this image.
+        img.onclick = function(evt) {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
   </body>
 </html>
